@@ -28,18 +28,24 @@ let funInput = () => {
 
 //SHOW DATA
 let funShow = (arraynya) => {
-    let listmurid = arraynya.map((val,ind)=>{
+    let listmurid = arraynya.map((val,index)=>{
         return `<tr><td>${val.nama}</td>
         <td>${val.age}</td>
         <td>${val.hobi}</td>
         <td><input type="button" value="edit"></td>
-        <td><input type="button" value="delete"</td></tr>`
+        <td><input type="button" value="delete" onclick="funHapus(${index})"</td></tr>`
     })
-    let listHobi = arrHobi.map((val,ind)=>{
+    let listHobi = arrHobi.map((val,index)=>{
         return `<option value="${val}">${val}</option>`
     })
     document.getElementById('ubahdisini').innerHTML=listmurid.join("")
     document.getElementById('searchJob').innerHTML=listHobi
+}
+
+//DELETE DATA
+let funHapus = (indeks)=>{
+    delete arrStudent[indeks];
+    funShow(arrStudent)
 }
 
 funShow(arrStudent)
