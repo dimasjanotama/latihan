@@ -24,12 +24,12 @@
         <fieldset>
             <legend>Filter</legend>
             <form>
-                Nama : <input type="text" id="searchName"><br><br>
-                Umur : <input type="number" id="searchMinAge"> - 
-                <input type="number" id="searchMaxAge"><br><br>
+                Nama : <input type="text" id="searchName" onkeyup="funFilterName()"><br><br>
+                Umur : <input type="number" id="searchMinAge" onkeyup="funFilterAge()"> - 
+                <input type="number" id="searchMaxAge" onkeyup="funFilterAge()"><br><br>
                 Pekerjaan : <select id='searchJob'>
                 </select><br><br>
-                <button>Search Job</button>
+                <input type="button" value="search job">
         </fieldset>
         <fieldset>
             <legend>Input Data</legend>
