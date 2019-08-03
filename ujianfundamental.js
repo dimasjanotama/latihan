@@ -7,7 +7,7 @@ let arrStudent = [
     {nama:"Pradipta", age:18, hobi:"Futsal" } //HARUS SAMA NAMANYA!!!!!!!!
 ];
 
-let arrHobi= ["Tidur", "Game", "Futsal", "Musik"];
+let arrHobi= ["All","Tidur", "Game", "Futsal", "Musik"];
 
 //INPUT DATA
 let funInput = () => {
@@ -19,6 +19,10 @@ let funInput = () => {
         age,  ////HARUS SAMA NAMANYA!!!!!!!!
         hobi  //HARUS SAMA NAMANYA!!!!!!!!
     });
+    let hobiExist = arrHobi.includes(hobi);
+    if (!hobiExist){
+        arrHobi.push(hobi)
+    }
     funShow(arrStudent);
 }
 
@@ -28,10 +32,14 @@ let funShow = (arraynya) => {
         return `<tr><td>${val.nama}</td>
         <td>${val.age}</td>
         <td>${val.hobi}</td>
-        <td><button>Edit</button></td>
-        <td><button>Delete</button></td></tr>`
+        <td><input type="button" value="edit"></td>
+        <td><input type="button" value="delete"</td></tr>`
+    })
+    let listHobi = arrHobi.map((val,ind)=>{
+        return `<option value="${val}">${val}</option>`
     })
     document.getElementById('ubahdisini').innerHTML=listmurid.join("")
+    document.getElementById('searchJob').innerHTML=listHobi
 }
 
 funShow(arrStudent)
