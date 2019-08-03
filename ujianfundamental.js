@@ -39,7 +39,7 @@ let funShow = (arraynya) => {
         return `<option value="${val}">${val}</option>`
     })
     document.getElementById('ubahdisini').innerHTML=listmurid.join("")
-    document.getElementById('searchJob').innerHTML=listHobi
+    document.getElementById('searchHobi').innerHTML=listHobi
 }
 
 //DELETE DATA
@@ -47,6 +47,13 @@ let funHapus = (indeks)=>{
     delete arrStudent[indeks];
     funShow(arrStudent)
 }
+// let funHapus = (indeks) => {
+//     let afterHapus = arrStudent.filter((val,index) => {
+//         return index != indeks
+//     })
+//     arrStudentBaru=afterHapus
+//     funShow(arrStudentBaru)
+// }
 
 //FILTER DATA
 //FILTER Nama
@@ -69,10 +76,17 @@ let funFilterAge = () => {
     funShow(hasilFilterAge)
 }
 
-
-
-
-
-
+//Filter Hobi
+let funFilterHobi = () => {
+    let selectHobi = document.getElementById('searchHobi').value;    
+    let hasilFilterHobi = arrStudent.filter((val)=>{
+        if (selectHobi == "All"){
+            return val.hobi !== selectHobi
+        } else {
+        return val.hobi == selectHobi
+        }
+    })
+    funShow(hasilFilterHobi)
+}
 
 funShow(arrStudent)

@@ -27,9 +27,9 @@
                 Nama : <input type="text" id="searchName" onkeyup="funFilterName()"><br><br>
                 Umur : <input type="number" id="searchMinAge" onkeyup="funFilterAge()"> - 
                 <input type="number" id="searchMaxAge" onkeyup="funFilterAge()"><br><br>
-                Pekerjaan : <select id='searchJob'>
+                Pekerjaan : <select id='searchHobi'>
                 </select><br><br>
-                <input type="button" value="search job">
+                <input type="button" value="search hobi" onclick="funFilterHobi()">
         </fieldset>
         <fieldset>
             <legend>Input Data</legend>
@@ -40,7 +40,7 @@
                     <td><input type="text" id="inputHobi"></td>
                 </tr>
             </table><br>
-            <input type="button" value='Submit' onclick="funInput()">
+            <input type="button" value='submit' onclick="funInput()">
             <br><br>
         </fieldset>
         <fieldset>
