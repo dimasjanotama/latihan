@@ -37,23 +37,30 @@
                 <tr>
                     <td><input type="text" id="inputName"></td>
                     <td><input type="number" id="inputAge"></td>
-                    <td><input type="text" id="inputJob"></td>
+                    <td><input type="text" id="inputHobi"></td>
                 </tr>
             </table><br>
-            <button>Submit</button>
+            <input type="button" value='Submit' onclick="funInput()">
             <br><br>
         </fieldset>
         <fieldset>
             <legend>Tabel Data</legend>
             <table id="tabeldata">
-                <tr>
-                    <th>Nama</th>
-                    <th>Umur</th>
-                    <th>Pekerjaan</th>
-                    <th>Action</th>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>Nama</th>
+                        <th>Umur</th>
+                        <th>Pekerjaan</th>
+                        <th colspan="2">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="ubahdisini">
+
+                </tbody>
             </table>
         </fieldset>
     </form>
+
+    <script src="ujianfundamental.js"></script>
 </body>
 </html>
