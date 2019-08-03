@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ujian</title>
+    <style>
+        form{
+            width: 40%;
+            margin: auto;
+        }
+        table, tr, td, th{
+            border: 1px solid black;
+            padding: 10px;
+            border-collapse: collapse;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Filter</legend>
+            <form>
+                Nama : <input type="text" id="searchName"><br><br>
+                Umur : <input type="number" id="searchMinAge"> - 
+                <input type="number" id="searchMaxAge"><br><br>
+                Pekerjaan : <select id='searchJob'>
+                </select><br><br>
+                <button>Search Job</button>
+        </fieldset>
+        <fieldset>
+            <legend>Input Data</legend>
+            <table id="tabelInput">
+                <tr>
+                    <td><input type="text" id="inputName"></td>
+                    <td><input type="number" id="inputAge"></td>
+                    <td><input type="text" id="inputJob"></td>
+                </tr>
+            </table><br>
+            <button>Submit</button>
+            <br><br>
+        </fieldset>
+        <fieldset>
+            <legend>Tabel Data</legend>
+            <table id="tabeldata">
+                <tr>
+                    <th>Nama</th>
+                    <th>Umur</th>
+                    <th>Pekerjaan</th>
+                    <th>Action</th>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+</body>
+</html>
