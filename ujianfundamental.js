@@ -29,10 +29,10 @@ let funInput = () => {
 //SHOW DATA (RENDER LIST)
 let funShow = (arraynya) => {
     let listmurid = arraynya.map((val,index)=>{
-        return `<tr><td>${val.nama}</td>
+        return `<tr id="baris${index}"><td>${val.nama}</td>
         <td>${val.age}</td>
         <td>${val.hobi}</td>
-        <td><input type="button" value="edit"></td>
+        <td><input type="button" value="edit" onclick="funEdit(${index})"></td>
         <td><input type="button" value="delete" onclick="funHapus(${index})"</td></tr>`
     }) //MAP MERETURN BERUPA DATA/SCRIPT (MENGUBAH ARRAY MENJADI TABEL)
     let listHobi = arrHobi.map((val)=>{
@@ -40,6 +40,7 @@ let funShow = (arraynya) => {
     })
     document.getElementById('ubahdisini').innerHTML=listmurid.join("")
     document.getElementById('searchHobi').innerHTML=listHobi
+    
 }
 
 //DELETE DATA
@@ -50,10 +51,37 @@ let funHapus = (indeks)=>{
 // let funHapus = (indeks) => {
 //     let afterHapus = arrStudent.filter((val,index) => {
 //         return index != indeks
-//     })
+//     }) 
 //     arrStudentBaru=afterHapus
 //     funShow(arrStudentBaru)
 // }
+
+//EDIT DATA
+let funEdit = (ind) => {
+    let editArray = arrStudent.filter((val,index)=>{
+    return index == ind})
+    let hasilEditArray = editArray.map((val,index)=>{
+    return `<td><input type="text" id="inputName${index}"></td>
+        <td><input type="number"></td>
+        <td><input type="text"></td>
+        <td><input type="button" value="edit" onclick="funEdit(${index})"></td>
+        <td><input type="button" value="delete" onclick="funHapus(${index})"</td>
+        <td><input type="button" value="perbarui" onclick="funPerbarui(${index}"</td>`
+    
+    })
+    document.getElementById(`baris${ind}`).innerHTML=hasilEditArray.join("")
+}
+
+let funPerbarui = (indek) => {
+    let nama = document.getElementById(`inputName${indek}`).value; //HARUS SAMA NAMANYA!!!!!!!!
+    let age = document.getElementById(`inputAge${indek}`).value; //HARUS SAMA NAMANYA!!!!!!!!
+    let hobi = document.getElementById(`inputHobi${indek}`).value; //HARUS SAMA NAMANYA!!!!!!!!
+     
+}
+
+
+
+
 
 //FILTER DATA
 //FILTER Nama
