@@ -58,30 +58,32 @@ let funHapus = (indeks)=>{
 
 //EDIT DATA
 let funEdit = (ind) => {
+    let indekske = ind // BIKIN VARIABEL UNTUK MARKING INDEX YANG MAU DIEDIT!!!
     let editArray = arrStudent.filter((val,index)=>{
     return index == ind})
     let hasilEditArray = editArray.map((val,index)=>{
-    return `<td><input type="text" id="inputName${index}"></td>
-        <td><input type="number"></td>
-        <td><input type="text"></td>
-        <td><input type="button" value="edit" onclick="funEdit(${index})"></td>
-        <td><input type="button" value="delete" onclick="funHapus(${index})"</td>
-        <td><input type="button" value="perbarui" onclick="funPerbarui(${index}"</td>`
+    return `<td><input type="text" id="inputName${indekske}"></td>
+        <td><input type="number" id="inputAge${indekske}"></td>
+        <td><input type="text" id="inputHobi${indekske}"></td>
+        <td><input type="button" value="edit" onclick="funEdit(${indekske})"></td>
+        <td><input type="button" value="delete" onclick="funHapus(${indekske})"</td>
+        <td><input type="button" value="perbarui" onclick="funPerbarui(${indekske})"</td>`
     
     })
     document.getElementById(`baris${ind}`).innerHTML=hasilEditArray.join("")
 }
 
 let funPerbarui = (indek) => {
-    let nama = document.getElementById(`inputName${indek}`).value; //HARUS SAMA NAMANYA!!!!!!!!
-    let age = document.getElementById(`inputAge${indek}`).value; //HARUS SAMA NAMANYA!!!!!!!!
-    let hobi = document.getElementById(`inputHobi${indek}`).value; //HARUS SAMA NAMANYA!!!!!!!!
-     
+    let namaEdit = document.getElementById(`inputName${indek}`).value; //HARUS SAMA NAMANYA!!!!!!!!
+    let ageEdit = document.getElementById(`inputAge${indek}`).value; //HARUS SAMA NAMANYA!!!!!!!!
+    let hobiEdit = document.getElementById(`inputHobi${indek}`).value; //HARUS SAMA NAMANYA!!!!!!!!
+    arrStudent[indek] = {nama: namaEdit, age: ageEdit, hobi: hobiEdit}
+    let hobiExist = arrHobi.includes(hobiEdit);
+    if (!hobiExist){
+        arrHobi.push(hobiEdit)
+    }
+    funShow(arrStudent) 
 }
-
-
-
-
 
 //FILTER DATA
 //FILTER Nama
